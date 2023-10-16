@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="memory.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            Margin="30">
+            <Button
+                Text="Zacznij od nowa"
+                Clicked="resetBtnClicked"/>
+            <Grid ColumnSpacing="20" RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <ImageButton
+                    Source="bg.png"
+                    x:Name="P00"
+                    Clicked="btnP00Clicked"
+                    Grid.Column="0"
+                    Grid.Row="0"/>
+                <ImageButton
+                    Source="bg.png"
+                    x:Name="P01"
+                    Clicked="btnP01Clicked"
+                    Grid.Column="1"
+                    Grid.Row="0"/>
+                <ImageButton
+                    Source="bg.png"
+                    x:Name="P02"
+                    Clicked="btnP02Clicked"
+                    Grid.Column="2"
+                    Grid.Row="0"/>
+                <ImageButton
+                    Source="bg.png"
+                    x:Name="P10"
+                    Clicked="btnP10Clicked"
+                    Grid.Column="0"
+                    Grid.Row="1"/>
+                <ImageButton
+                    Source="bg.png"
+                    x:Name="P11"
+                    Clicked="btnP11Clicked"
+                    Grid.Column="1"
+                    Grid.Row="1"/>
+                <ImageButton
+                    Source="bg.png"
+                    x:Name="P12"
+                    Clicked="btnP12Clicked"
+                    Grid.Column="2"
+                    Grid.Row="1"/>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
