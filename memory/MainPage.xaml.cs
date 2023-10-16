@@ -2,14 +2,36 @@
 {
     public partial class MainPage : ContentPage
     {
-        int[] elementy = { 0, 1, 0, 2, 2, 1 };
+        private const int liczbaPar = 3;
+        int[] elementy = new int[liczbaPar*2];
         string[] karty = { "kw.png", "ko.png", "tr.png"};
         private bool czyPierwsza = true;
         private int nrPierwszej;
         private ImageButton btnPierwszy;
+        Random rnd = new Random();
         public MainPage()
         {
             InitializeComponent();
+            losujElementy();
+        }
+        private void losujElementy()
+        {
+            for (int i = 0; i < liczbaPar*2; i++)
+                elementy[i] = -1;
+            for (int i = 0;i < liczbaPar; i++)
+            {
+                int x;
+                do
+                {
+                    x = rnd.Next(0, liczbaPar * 2);
+                } while (elementy[x]>=0);
+                elementy[x] = i;
+                do
+                {
+                    x = rnd.Next(0, liczbaPar * 2);
+                } while (elementy[x]>=0);
+                elementy[x] = i;
+            }
         }
         private void resetBtnClicked(object sender, EventArgs e)
         {
@@ -26,6 +48,7 @@
             P10.IsEnabled = true;
             P11.IsEnabled = true;
             P12.IsEnabled = true;
+            losujElementy();
         }
         private async void btnP00Clicked(object sender, EventArgs e)
         {
